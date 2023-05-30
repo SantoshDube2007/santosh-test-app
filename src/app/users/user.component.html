@@ -1,0 +1,81 @@
+<div class="hero_section">
+  <!-- ----------------Home-discription----------------- -->
+  <div class="home_discription">
+      <div class="home_item">
+          <div class="home_item-icon"> <span class="material-icons">
+                  person_3
+              </span>
+              <div class="home_item-icon">User</div>
+          </div>
+
+          <div class="tile">
+
+              <span class="material-icons tile-list curspointer" (click)="showListView('list')">
+                  list
+              </span>
+
+
+              <span class="material-icons tile-grid curspointer" (click)="showListView('tile')">
+                  grid_view
+              </span>
+
+          </div>
+      </div>
+      <div class="home_page">
+          User: {{totalUsers}}
+      </div>
+  </div>
+  <!-- -----------------Home-discription-End---------------- -->
+
+  <!-- ------------------recent-blog------------------------------ -->
+  <div [hidden]="showTiles" class="recent_blogs">
+
+      <div class="blog_cards" >
+          <div class="blog_card" *ngFor="let u of users">
+              <img src="assets/images/profipic.jpg" alt="">
+              <h2>{{u.name}} </h2>
+              <p>{{u.email}}  </p>
+          </div>
+      </div>
+  </div>
+  <!-- ------------------recent-blog-end----------------------------- -->
+
+  <div [hidden]="!showTiles" class="mat-elevation-z8">
+    <div *ngIf="isLoading">
+      <mat-spinner></mat-spinner>
+    </div>
+    <mat-form-field>
+      <mat-label>Search</mat-label>
+      <input matInput placeholder="Search" (keyup)="Search($event)">
+    </mat-form-field>
+    <table mat-table matSort [dataSource]="dataSource">
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+  
+      <!-- Weight Column -->
+      <ng-container matColumnDef="email">
+        <th mat-sort-header mat-header-cell *matHeaderCellDef> Email </th>
+        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+      </ng-container>
+  
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="phone">
+        <th mat-sort-header mat-header-cell *matHeaderCellDef> Phone </th>
+        <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                   showFirstLastButtons
+                   aria-label="Select page of periodic elements">
+    </mat-paginator>
+  </div>
+  
+</div>

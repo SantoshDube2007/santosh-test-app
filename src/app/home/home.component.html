@@ -1,0 +1,95 @@
+<div class="hero_section">
+    <!-- ----------------Home-discription----------------- -->
+    <div class="home_discription">
+        <div class="home_item">
+            <div> <span class="material-icons">
+                home
+                </span> </div>
+            <div>Home</div>
+        </div>
+        <div class="home_page">
+            Home Page Discription
+        </div>
+    </div>
+    <!-- -----------------Home-discription-End---------------- -->
+    <!-- ----------card-section------------------------------ -->
+
+    <div class="cards">
+        <div class="card">
+            <div class="card_icon">
+                <span class="material-icons">
+                    person_3
+                    </span>
+            </div>
+            <div class="card_discription">
+                <p>345 <br>
+                    <span>Total Order</span>
+
+                </p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card_icon">
+                <span class="material-icons">
+                    person_3
+                    </span>
+            </div>
+            <div class="card_discription">
+                <p>345 <br>
+                    <span>Total Order</span>
+
+                </p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card_icon">
+                <span class="material-icons">
+                    person_3
+                    </span>
+            </div>
+            <div class="card_discription">
+                <p>345 <br>
+                    <span>Total Order</span>
+
+                </p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card_icon">
+                <span class="material-icons">
+                    person_3
+                    </span>
+            </div>
+            <div class="card_discription">
+                <p>345 <br>
+                    <span>Total Order</span>
+
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ------------------------card-section-end------------- -->
+
+    <!-- ------------------recent-blog------------------------------ -->
+    <div class="recent_blogs">
+        <div class="blog_heading">
+
+            <div class="home_item">
+                <div> <i class="fa fa-home" style="font-size:20px"></i> </div>
+                <div>Recent Blogs</div>
+            </div>
+
+        </div>
+
+        <div class="blog_cards" >
+            <div class="blog_card" *ngFor="let p of posts">
+                <img src="assets/images/img1.jpg" alt="">
+                <h4>{{p.title}}</h4>
+                <p>{{p.body}} </p>
+            </div>
+        </div>
+    </div>
+    <!-- ------------------recent-blog-end----------------------------- -->
+
+</div>
